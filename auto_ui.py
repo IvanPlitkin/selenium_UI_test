@@ -25,10 +25,6 @@ for i in range (3):
     sendbutton= driver.find_element(By.XPATH, '/html/body/form/input')
     sendbutton.click()
 
-
-
-time.sleep (5)
+time.sleep (3)
 
 driver.close()
-
-
