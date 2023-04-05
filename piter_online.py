@@ -14,7 +14,7 @@ def code_status():
 
 for i in range (5):
     driver.get("https://piter-online.net/")
-    time.sleep(3)
+    time.sleep(1)
     street_area= driver.find_element(By.XPATH, '//*[@id="root"]/div/div[1]/div[3]/div[1]/div/div/div/div[2]/div/div[1]/div/div[1]/div[1]/div/div/div/div[1]/input')
     street_area.send_keys('Тестовая линия')
     time.sleep(1)
@@ -23,13 +23,12 @@ for i in range (5):
     home_area.send_keys('1')
     time.sleep(1)
     home_area.send_keys(Keys.ENTER)
-    type_list= driver.find_element(By.XPATH, '//*[@id="root"]/div/div[1]/div[3]/div[1]/div/div/div/div[2]/div/div[1]/div/div[2]/div/div/div/div/div[1]/input')
+    type_list= driver.find_element(By.CSS_SELECTOR, '.app184')
     type_list.click()
     time.sleep(1)
-    type_flat=driver.find_element(By.XPATH, '//*[@id="forSelectField"]/div[1]/div/div/div/ul/li[1]')
-    type_flat.click()
+    type_flat=driver.find_element(By.CSS_SELECTOR, 'app184 > app186') #не работает
+    type_flat.click() 
     time.sleep(1)
-    type_flat.send_keys(Keys.ENTER)
     find_button= driver.find_element(By.XPATH, '//*[@id="root"]/div/div[1]/div[3]/div[1]/div/div/div/div[2]/div/div[1]/div/div[3]/div/div')
     find_button.click()
     close_pop_up_button= driver.find_element(By.XPATH, '//*[@id="root"]/div/div[4]/div/div/div/div/div')
@@ -42,10 +41,7 @@ for i in range (5):
     phone_area.send_keys('1111111111')
     request_button= driver.find_element(By.XPATH, '//*[@id="root"]/div/div[1]/div[4]/div/div[2]/div[1]/form/div/div[6]/div')
     request_button.click()
-    code_status() 
-
-
-    
+    code_status()  
 
 time.sleep (5)
 
