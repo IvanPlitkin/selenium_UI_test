@@ -7,16 +7,10 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    first_name = browser.find_element(By.CLASS_NAME, 'form-control.first')
-    first_name.send_keys('Antuan')
-    last_name = browser.find_element(By.CLASS_NAME, 'form-control.second')
-    last_name.send_keys('Sebastian')
-    email= browser.find_element(By.CLASS_NAME,'form-control.third')
-    email.send_keys('123@mail.me')
-
-    button = browser.find_element(By.CSS_SELECTOR, "button.btn")
-    button.click()
-
+    browser.find_element(By.CLASS_NAME, 'form-control.first').send_keys('Имя')
+    browser.find_element(By.CLASS_NAME, 'form-control.second').send_keys('Фамилия')
+    browser.find_element(By.CLASS_NAME,'form-control.third').send_keys('123@mail.me')
+    browser.find_element(By.CSS_SELECTOR, "button.btn").click()                
     time.sleep(1)
 
     welcome_text_elt = browser.find_element(By.TAG_NAME, "h1")
